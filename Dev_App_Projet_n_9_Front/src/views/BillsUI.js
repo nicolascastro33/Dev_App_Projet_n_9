@@ -19,6 +19,7 @@ const row = (bill) => {
     `)
   }
 
+
 const rows = (data) => {
   return (data?.length) ? data.map(bill => row(bill)).join("") : ""
 }
@@ -47,8 +48,9 @@ export default ({ data: bills, loading, error }) => {
   } else if (error) {
     return ErrorPage(error)
   }
-
+  // Billed bugs: [Bug report] - Bills
   const filteredBills = bills?.sort((a, b) => new Date(b.date) - new Date(a.date))
+  // 
   return (`
     <div class='layout'>
       ${VerticalLayout(120)}

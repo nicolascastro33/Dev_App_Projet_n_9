@@ -160,18 +160,6 @@ describe("Given I am connected as an employee", () => {
 
       const formNewBill = screen.queryByTestId('form-new-bill')
       expect(formNewBill).toBeTruthy()
-
-      // Possibilité en externalisant le détail de l'implémentation des tests dans une fixture
-      
-      // givenIAmConnectedAs({
-      //   type: 'Employee'
-      // });
-
-      // givenIAmOnBillsPage(bills);
-
-      // whenIClickOnNewBillButton();
-
-      // thenIShouldSee('form-new-bill');
     })
   })
 })
@@ -219,7 +207,6 @@ describe("Given I am a user connected as Employee", () => {
       window.onNavigate(ROUTES_PATH.Bills)
       await waitFor(() => screen.getByText("Mes notes de frais"))
       const newBillButton  = await screen.getByText("Nouvelle note de frais")
-
       expect(newBillButton).toBeTruthy()
     })
   describe("When an error occurs on API", () => {
